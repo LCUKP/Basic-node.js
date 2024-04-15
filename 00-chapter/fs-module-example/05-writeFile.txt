@@ -1,0 +1,4 @@
+Write by module fs
+ไฟล์นี้คือไฟล์เทสของ Module File System (fs) 
+// 05-fs-module-sync.js
+เขียนเมื่อ Mon Apr 15 2024 13:44:28 GMT+0700 (เวลาอินโดจีน)

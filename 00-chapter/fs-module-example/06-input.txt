@@ -1,0 +1,2 @@
+ไฟล์นี้คือไฟล์เทสของ Module File System (fs) 
+// 06-fs-module-async.js
