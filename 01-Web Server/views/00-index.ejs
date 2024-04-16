@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+</head>
+<body>
+    <%- include('03-nav.ejs') %>
+    <div class="container">
+        <% if(name == 'Luck') { %>
+            <h1>Sawad-dee! my name is <%= name %> <%= fname %></h1>
+        <% } else if(name == 'Lucky'){ %>
+            <%-warning%>
+        <% } else { %>
+            <p>ไม่รู้จักฉันไม่รู้จักเทอ</p>
+        <% } %>
+        <hr>
+
+        <p>อ้างอิงอาเรย์ผ่าน index <%= foods[0] %> <%= foods[1] %> <%= foods[2] %></p>
+        <hr>
+
+        <p>อ้างอิงอาเรย์ผ่าน for loop</p>
+        <% for (i = 0; i < foods.length; i++) { %>
+            <%= foods[i] %>
+        <% } %>
+        <hr>
+
+        <p>อ้างอิงอาเรย์ผ่าน for in</p>
+        <% for(i in foods){ %>
+            <%= foods[i] %>
+        <% } %>
+        <hr>
+
+        <p>การส่งข้อมูลแบบ Object</p>
+        <% Object.values(products).forEach(function(item) { %>
+            <div class="card" style="width: 18rem;">
+                <img src="<%= item.img %>" class="card-img-top" alt="<%= item.name %>">
+                <div class="card-body">
+                  <h5 class="card-title">ชื่อเมนู : <%= item.name %></h5>
+                  <p class="card-text">ราคา : <%= item.price %></p>
+                  <a href="#" class="btn btn-primary">Go somewhere</a>
+                </div>
+              </div>
+        <% }) %>
+    </div>    
+    
+</body>
+</html>

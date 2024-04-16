@@ -4,11 +4,20 @@
 const express = require('express')
 const app = express()
 const router = require('./routes/00-router')
+const path = require('path')
 
+port = 3000
+
+// app.use(router)
+
+app.set('views',path.join(__dirname,'views'))           //
+app.set('view engine','ejs')                            // Use view engine => ejs
+app.use(express.urlencoded({extended:false}))           //ทำให้สามารถอ่านข้อมูลแบบ Post ได้
 app.use(router)
+app.use(express.static(path.join(__dirname,'public')))  //เข้าถึงข้อมูลประเภท static file
 
-app.listen(3000,()=>{
-    console.log('Start server at port 3000')
+app.listen(port,()=>{
+    console.log('Start server at port '+port)
 })
 
 
